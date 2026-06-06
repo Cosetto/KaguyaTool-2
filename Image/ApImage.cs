@@ -14,7 +14,7 @@ internal static class ApImage
     public static ImageMetadata ReadMetadata(ReadOnlySpan<byte> data, string originalName)
     {
         if (!IsAp(data))
-            throw new InvalidDataException("AP image must start with AP");
+            throw new InvalidDataException("Invalid AP image!");
 
         int width = checked((int)BinaryPrimitives.ReadUInt32LittleEndian(data[2..6]));
         int height = checked((int)BinaryPrimitives.ReadUInt32LittleEndian(data[6..10]));

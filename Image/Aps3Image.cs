@@ -77,7 +77,7 @@ internal static class Aps3Image
     private static ParsedAps Parse(byte[] data, string originalName)
     {
         if (!IsAps3(data))
-            throw new InvalidDataException("APS3 image must start with \\x04APS3");
+            throw new InvalidDataException("Invalid APS3 image!");
 
         int position = 5;
         int count = ReadInt32(data, ref position);
